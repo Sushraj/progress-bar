@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
     AppRoutingModule,
     MaterialModule,
     BrowserAnimationsModule,
+    MatProgressBarModule
   
   ],
   providers: [],
