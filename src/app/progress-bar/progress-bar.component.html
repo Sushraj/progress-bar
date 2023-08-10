@@ -1,4 +1,53 @@
-<div>
+<!-- <div>
     <h2> {{progressWidth}}%</h2>
     <mat-progress-bar mode="determinate" [value]="progressWidth"> </mat-progress-bar>
+</div> -->
+
+<div>
+    <label> Agent </label>
+        <input type="radio" name="option1" (change)="onRadioChange('option1',$event)" [(ngModel)]="isChecked1">
+   
+    <label> Skills  </label>
+        <input type="radio" name="option2" (change)="onRadioChange('option2',$event)" [(ngModel)]="isChecked2">
+   
 </div>
+
+<div *ngIf="selectedOption === 'option1'">
+    <input type="text" name="field1" placeholder="Field 1"  />
+    <input type="text" name="field2" placeholder="Field 2"  />
+</div>
+
+<div *ngIf="selectedOption === 'option2'">
+    <!-- Form fields to show when Option 2 is selected -->
+    <input type="text" name="field3" placeholder="Field 3" />
+  </div>
+
+  <hr>
+
+  <label>
+    <input type="radio" name="radioGroup" [(ngModel)]="isChecked3" (change)="onRadioChange1()" />
+    Radio Button
+  </label>
+  
+  <button (click)="checkRadioButton()">Check Radio Button</button>
+  <button (click)="uncheckRadioButton()">Uncheck Radio Button</button>
+  <button (click)="toggeleRadioButton()">toggle Radio Button</button>
+
+  <hr>
+
+  <mat-form-field>
+    <input type="text" placeholder="Enter a chip" aria-label="Chip input" matInput [matAutocomplete]="auto" [(ngModel)]="chipInput">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions" [value]="option">
+        {{ option }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  
+  <mat-chip-list>
+    <mat-chip *ngFor="let chip of selectedChips" [removable]="true" (removed)="removeChip(chip)">
+      {{ chip }}
+      <mat-icon matChipRemove>cancel</mat-icon>
+    </mat-chip>
+  </mat-chip-list>
+  

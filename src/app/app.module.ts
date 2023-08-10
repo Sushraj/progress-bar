@@ -6,6 +6,8 @@ import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // Import FormsModule for ngModel
+
 
 
 @NgModule({
@@ -18,7 +20,13 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     AppRoutingModule,
     MaterialModule,
     BrowserAnimationsModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatAutocompleteModule,
+    MatChipsModule,
+    MatFormFieldModule,
+    MatInputModule
   
   ],
   providers: [],
